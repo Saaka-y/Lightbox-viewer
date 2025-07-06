@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Gill Sans", sans-serif;
+}
+
+main {
+  width: 100%;
+  min-width: 350px;
+  height: auto;
+  margin: 2rem auto;
+}
+
+h1 {
+  min-width: 350px;
+  margin: 2rem 0;
+  padding: 1rem;
+  text-align: center;
+  background-color: rgba(0, 170, 255, 0.738);
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;      
+  flex-wrap: wrap;
+}
+
+@media screen and (min-width: 768px) {
+
+  .gallery {
+    flex-direction: row;
+    justify-content: center;   /* 方向を変えたら、センターの揃え方も変わる点に注意 */
+}
+
+}
+
+.gallery-item {
+  margin: 1rem;
+  width: 300px;
+  height: 200px;
+  padding: 0 1rem;
+  object-fit: cover;
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(108, 108, 106, 0.217);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1000; /* 他の要素より前面に出す */
+
+}
+
+#lightbox-image {
+  max-width: 90%;
+  max-height: 80%;
+  border: 4px solid white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+#close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
